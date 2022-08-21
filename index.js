@@ -10,14 +10,14 @@ require('dotenv').config()
 
 // MONGODB Connection
 console.log(process.env.DB_PASS)
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.dxoyv.mongodb.net/?retryWrites=true&w=majority`;
+const uri = "mongodb+srv://mubasshir:rIvUlwMZ3LoqtOda@cluster0.xbivgqw.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 const productsCollection = client.db("microparts").collection("products");
 const usersCollection = client.db("microparts").collection("users");
 const cartCollection = client.db("microparts").collection("cart");
 const reviewCollection = client.db("microparts").collection("review");
 // Stripe
-const stripe = require("stripe")('sk_test_51L1c26AQe13D7JV445RLBZTVrVHrVl6aC4EeaLlsTVOGhvgwxoh5YxiRKKYzrcozo7mvFdLRrR0uwiU3CAeRLe8800O5amBNFk');
+const stripe = require("stripe")('sk_test_51LZ9txGXxgiiQIyCWMKowUwMMNCCoKBWn9zhiHDjZjUDlp4sBywAD3anCWdrfkSSGW3N1lfeZrnybmHoAUxBtwQM00K4AjqjQr');
 // verify jwt
 function verifyJWT(req, res, next) {
     const authHeader = req.headers.authorization;
